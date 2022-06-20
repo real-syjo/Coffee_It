@@ -21,9 +21,16 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	//devtools
+	implementation 'org.springframework.boot:spring-boot-devtools'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//postgresql
+	implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23'
+	runtimeOnly 'org.postgresql:postgresql'
+
 }
 
 tasks.named('test') {
