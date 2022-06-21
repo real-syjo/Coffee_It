@@ -9,14 +9,16 @@ import src.com.coffee.domain.user.domain.User;
 
 @RestController
 public class UserApi {
-
-		@RequestMapping(value="/test", method=RequestMethod.GET)
-		public ModelAndView getUser() {
-			User user = new User();
-			
-			ModelAndView modelAndView = new ModelAndView();
-			modelAndView.addObject("user", user);
-			
-			return modelAndView;
-		}
+//
+//		@RequestMapping(value="/test", method=RequestMethod.GET)
+//		public ModelAndView getUser() {
+//			User user = new User();
+//			
+//			ModelAndView mav = new ModelAndView("test");
+//			mav.addObject("user", user);
+//			System.out.println(user.getKey_id());
+//			System.out.println(user.getKey_nm());
+//			
+//			return mav;
+//		}
 }
