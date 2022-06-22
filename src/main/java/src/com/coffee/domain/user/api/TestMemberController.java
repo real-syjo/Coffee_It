@@ -1,8 +1,10 @@
-package src.com.coffee.domain;
+package src.com.coffee.domain.user.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import src.com.coffee.domain.user.dao.TestMemberDao;
 
 @Controller
 public class TestMemberController {

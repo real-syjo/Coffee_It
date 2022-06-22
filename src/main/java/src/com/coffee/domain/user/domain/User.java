@@ -1,38 +1,63 @@
 package src.com.coffee.domain.user.domain;
 
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@Entity
+@Table(name="user")
 public class User {
-	//postgresql 연동 test
-//	private String key_id;
-//	private String key_nm;
-//	
-//	public User(String key_id, String key_nm) {
-//		super();
-//		this.key_id = key_id;
-//		this.key_nm = key_nm;
-//	}
-//
-//	public User() {
-//	}
-//
-//	public String getKey_id() {
-//		return key_id;
-//	}
-//
-//	public void setKey_id(String key_id) {
-//		this.key_id = key_id;
-//	}
-//
-//	public String getKey_nm() {
-//		return key_nm;
-//	}
-//
-//	public void setKey_nm(String key_nm) {
-//		this.key_nm = key_nm;
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return "User [key_id=" + key_id + ", key_nm=" + key_nm + "]";
-//	}
-//	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String user_Id;
+	
+	private String auth_code;
+	private String file_master_seq;
+	private String user_pass;
+	private String user_nm;
+	private String user_ctnt;
+	private String user_addr;
+	private String user_mail;
+	private String user_tel;
+	private String user_keyword;
+	private Date user_reg_date;
+	private Date user_update_date;
+	private String user_type;
+	
+	public User() {
+		super();
+	}
+
+	public User(String user_Id, String auth_code, String file_master_seq, String user_pass, String user_nm,
+			String user_ctnt, String user_addr, String user_mail, String user_tel, String user_keyword,
+			Date user_reg_date, Date user_update_date, String user_type) {
+		super();
+		this.user_Id = user_Id;
+		this.auth_code = auth_code;
+		this.file_master_seq = file_master_seq;
+		this.user_pass = user_pass;
+		this.user_nm = user_nm;
+		this.user_ctnt = user_ctnt;
+		this.user_addr = user_addr;
+		this.user_mail = user_mail;
+		this.user_tel = user_tel;
+		this.user_keyword = user_keyword;
+		this.user_reg_date = user_reg_date;
+		this.user_update_date = user_update_date;
+		this.user_type = user_type;
+	}
+
+	
 }

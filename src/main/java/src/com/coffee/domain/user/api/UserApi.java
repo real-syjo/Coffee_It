@@ -1,24 +1,21 @@
 package src.com.coffee.domain.user.api;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import src.com.coffee.domain.user.domain.User;
+import src.com.coffee.domain.user.dao.UserDao;
 
-@RestController
+@Controller
 public class UserApi {
-//
-//		@RequestMapping(value="/test", method=RequestMethod.GET)
-//		public ModelAndView getUser() {
-//			User user = new User();
-//			
-//			ModelAndView mav = new ModelAndView("test");
-//			mav.addObject("user", user);
-//			System.out.println(user.getKey_id());
-//			System.out.println(user.getKey_nm());
-//			
-//			return mav;
-//		}
+	@Autowired
+	private UserDao userDao;
+	
+	@GetMapping("/joinForm")
+	public String joinForm() {
+		System.out.println("@@@ /joinForm 호출 성공 @@@");
+		
+		return "joinForm";
+	}
+	
 }
