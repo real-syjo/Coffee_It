@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,13 +20,22 @@ import lombok.ToString;
 public class TestMember {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(generator = "system-uuid")
+	@GenericGenerator(name="system-uuid", strategy="uuid")
 	private String userid;
 	
 	private String password;
 	private String email;
 	
-	public TestMember(String string, String string2, String string3) {
-		
+	
+	public TestMember() {
+		super();
 	}
+
+	public TestMember(String userid, String password, String email) {
+		this.userid=userid;
+		this.password=password;
+		this.email=email;
+	}
+
 }
