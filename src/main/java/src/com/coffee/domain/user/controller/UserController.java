@@ -1,15 +1,15 @@
-package src.com.coffee.domain.user.api;
+package src.com.coffee.domain.user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import src.com.coffee.domain.user.dao.UserDao;
+import src.com.coffee.domain.user.repository.UserRepository;
 
 @Controller
-public class UserApi {
+public class UserController {
 	@Autowired
-	private UserDao userDao;
+	private UserRepository userDao;
 	
 	@GetMapping("/joinForm")
 	public String joinForm() {

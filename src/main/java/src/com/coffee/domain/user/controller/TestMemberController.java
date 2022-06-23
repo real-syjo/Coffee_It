@@ -1,15 +1,15 @@
-package src.com.coffee.domain.user.api;
+package src.com.coffee.domain.user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import src.com.coffee.domain.user.dao.TestMemberDao;
+import src.com.coffee.domain.user.repository.TestMemberRepository;
 
 @Controller
 public class TestMemberController {
 	@Autowired
-	private TestMemberDao memberDao;
+	private TestMemberRepository memberDao;
 	
 	@GetMapping("/test")
 	public String index() {

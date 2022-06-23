@@ -1,4 +1,4 @@
-package src.com.coffee.domain.user.dao;
+package src.com.coffee.domain.user.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import src.com.coffee.domain.user.domain.User;
 
 @Repository
-public interface UserDao extends JpaRepository<User, String>{
+public interface UserRepository extends JpaRepository<User, String>{
 
 }
