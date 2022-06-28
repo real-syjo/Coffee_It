@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.annotation.CreatedDate;
+
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -32,6 +35,7 @@ public class User {
 	private String user_mail;
 	private String user_tel;
 	private String user_keyword;
+	@CreatedDate
 	private Date user_reg_date;
 	private Date user_update_date;
 	private String user_type;
@@ -40,6 +44,7 @@ public class User {
 		super();
 	}
 
+	@Builder
 	public User(String user_Id, String auth_code, String file_master_seq, String user_pass, String user_nm,
 			String user_ctnt, String user_addr, String user_mail, String user_tel, String user_keyword,
 			Date user_reg_date, Date user_update_date, String user_type) {

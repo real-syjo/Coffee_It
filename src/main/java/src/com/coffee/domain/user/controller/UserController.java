@@ -9,7 +9,7 @@ import src.com.coffee.domain.user.repository.UserRepository;
 @Controller
 public class UserController {
 	@Autowired
-	private UserRepository userDao;
+	private UserRepository userRepository;
 	
 	@GetMapping("/joinForm")
 	public String joinForm() {
