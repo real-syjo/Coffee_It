@@ -8,5 +8,5 @@ import src.com.coffee.domain.user.domain.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, String>{
-//	public User findByUsername(String username);
+	public User findByUserId(String userId);
 }

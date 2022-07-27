@@ -2,6 +2,7 @@ package src.com.coffee.domain.user.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,20 +12,17 @@ import javax.persistence.Table;
 import org.springframework.data.annotation.CreatedDate;
 
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
-@Getter
-@Setter
-@ToString
+@Data
 @Entity
 @Table(name="user")
 public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String user_Id;
+	@Column(name = "user_Id")
+	private String userId;
 	
 	private String auth_code;
 	private String file_master_seq;
@@ -45,11 +43,11 @@ public class User {
 	}
 
 	@Builder
-	public User(String user_Id, String auth_code, String file_master_seq, String user_pass, String user_nm,
+	public User(String userId, String auth_code, String file_master_seq, String user_pass, String user_nm,
 			String user_ctnt, String user_addr, String user_mail, String user_tel, String user_keyword,
 			Date user_reg_date, Date user_update_date, String user_type) {
 		super();
-		this.user_Id = user_Id;
+		this.userId = userId;
 		this.auth_code = auth_code;
 		this.file_master_seq = file_master_seq;
 		this.user_pass = user_pass;
