@@ -1,5 +1,7 @@
 package src.com.coffee.domain.user.domain;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.Builder;
 import lombok.Data;
@@ -62,5 +66,4 @@ public class User {
 		this.user_type = user_type;
 	}
 
-	
 }
